@@ -14,7 +14,7 @@ cat << EOF > "$CONFIG_FILE"
 
 add_newline = true  # Inserts a blank line between shell prompts
 command_timeout = 1000  # Change command timeout from 500 to 1000 ms
-format = """$env_var $all"""  # Add custom formatting before other stuff
+format = """\$env_var \$all"""  # Add custom formatting before other stuff
 
 # Drop ugly default prompt characters
 [character]
@@ -25,19 +25,19 @@ error_symbol = ""
 
 # Shows an icon depending on what distro it is running on
 [env_var.STARSHIP_DISTRO]
-format = '[$env_value](bold white) '
+format = '[\$env_value](bold white) '
 variable = "STARSHIP_DISTRO"
 disabled = false
 
 # Shows the current username
 [env_var.USER]
-format = '[$env_value](bold white) '
+format = '[\$env_value](bold white) '
 variable = "USER"
 disabled = false
 
 # Shows an icon depending on what device it is running on
 [env_var.STARSHIP_DEVICE]
-format = 'on [$env_value](bold yellow)'
+format = 'on [\$env_value](bold yellow)'
 variable = "STARSHIP_DEVICE"
 disabled = false
 
@@ -46,7 +46,7 @@ disabled = false
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = "[$hostname](bold yellow) "
+format = "[\$hostname](bold yellow) "
 disabled = false
 
 # Shows current directory
@@ -56,35 +56,35 @@ truncation_symbol = "…/"
 home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
-format = "at [$path]($style)[$read_only]($read_only_style) "
+format = "at [\$path](\$style)[\$read_only](\$read_only_style) "
 
 # Shows current git branch
 [git_branch]
-symbol = " "
-format = "via [$symbol$branch]($style) "
+symbol = " "
+format = "via [\$symbol\$branch](\$style) "
 # truncation_length = 4
 truncation_symbol = "…/"
 style = "bold green"
 
 # Shows current git status
 [git_status]
-format = '[\($all_status$ahead_behind\)]($style) '
+format = '[\(\$all_status\$ahead_behind\)](\$style) '
 style = "bold green"
 conflicted = "🏳"
 up_to_date = " "
 untracked = " "
-ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}"
-stashed = ""
+ahead = "⇡\${count}"
+diverged = "⇕⇡\${ahead_count}⇣\${behind_count}"
+behind = "⇣\${count}"
+stashed = " "
 modified = " "
-staged = '[++\($count\)](green)'
+staged = '[++\(\$count\)](green)'
 renamed = "襁 "
 deleted = " "
 
 # Shows kubernetes context and namespace
 [kubernetes]
-format = 'via [ﴱ $context\($namespace\)](bold purple) '
+format = 'via [ﴱ \$context(\$namespace)](bold purple) '
 disabled = false
 
 # ---
@@ -116,7 +116,7 @@ disabled = true
 
 [localip]
 ssh_only = true
-format = '@[$localipv4](bold red) '
+format = '@[\$localipv4](bold red) '
 disabled = false
 
 [memory_usage]
@@ -124,13 +124,6 @@ disabled = false
 threshold = -1
 symbol = ' '
 style = 'bold dimmed green'
-
-[time]
-disabled = false
-format = '🕙[\[ $time \]]($style) '
-time_format = '%T'
-utc_time_offset = '+2'
-#time_range = '10:00:00-14:00:00'
 EOF
 
 echo "starship.toml configuration file has been updated."
