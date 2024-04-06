@@ -22,4 +22,4 @@ Please see the `LICENSE` file for details on our code of conduct, and the proces
 
 ## Contact
 
-Project Link: [https://github.com/NeevChandiramani/StarshipScript]
+Project Link: [https://github.com/NeevChandiramani/StarshipScript](starship script)
