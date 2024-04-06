@@ -22,6 +22,4 @@ Please see the `LICENSE` file for details on our code of conduct, and the proces
 
 ## Contact
 
-Your Name - Your Email - Your Twitter
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/NeevChandiramani/StarshipScript]
